@@ -1,20 +1,23 @@
 //your JS code here. If required.
-let text = document.getElementById("text");
-let delay = document.getElementById("delay");
-let submit = document.getElementById("btn");
-let output = document.getElementById("output");
-async function showMessage(){
-	// await return new Promise((resolve,reject)=>{
-	// 	if(text.value){
-	// 		setTimeout(()=>{
-	// 			resolve(text.value);
-	// 		},delay*1000)
-	// 	}
-	// })
+ async function displayMessage() {
+      const textInput = document.getElementById('text');
+      const delayInput = document.getElementById('delay');
+      const outputDiv = document.getElementById('output');
 
-	setTimeout(()=>{
-		output.innerText = text.value;
-	},delay.value*1000)
-}
- 
-submit.addEventListener("click", showMessage);
+      const message = textInput.value;
+      const delay = parseInt(delayInput.value)*1000;
+
+      if (!message || !delay) {
+        outputDiv.textContent = 'Please enter a message and a delay.';
+        return;
+      }
+
+      outputDiv.textContent = 'Waiting...';
+
+      await new Promise(resolve => setTimeout(resolve, delay));
+
+      outputDiv.textContent = message;
+    }
+
+    const btn = document.getElementById('btn');
+    btn.addEventListener('click', displayMessage);
