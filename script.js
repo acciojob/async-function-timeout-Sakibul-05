@@ -4,17 +4,10 @@
       const textInput = document.getElementById('text');
       const delayInput = document.getElementById('delay');
       const outputDiv = document.getElementById('output');
-		outputDiv.innerText = "";
+	  outputDiv.innerText = "";
       const message = textInput.value;
       const delay = parseInt(delayInput.value);
-
-      // if (!message || !delay) {
-      //   outputDiv.textContent = 'Please enter a message and a delay.';
-      //   return;
-      // }
-
-      // outputDiv.textContent = 'Waiting...';
-
+    //The await keyword makes the function pause the execution and wait for a resolved promise before it continues
       await new Promise(resolve => setTimeout(resolve, delay));
 
       outputDiv.textContent = message;
