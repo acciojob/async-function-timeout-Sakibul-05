@@ -7,12 +7,12 @@
       const message = textInput.value;
       const delay = parseInt(delayInput.value)*1000;
 
-      if (!message || !delay) {
-        outputDiv.textContent = 'Please enter a message and a delay.';
-        return;
-      }
+      // if (!message || !delay) {
+      //   outputDiv.textContent = 'Please enter a message and a delay.';
+      //   return;
+      // }
 
-      outputDiv.textContent = 'Waiting...';
+      // outputDiv.textContent = 'Waiting...';
 
       await new Promise(resolve => setTimeout(resolve, delay));
 
