@@ -6,7 +6,7 @@
       const outputDiv = document.getElementById('output');
 		outputDiv.innerText = "";
       const message = textInput.value;
-      const delay = parseInt(delayInput.value)*1000;
+      const delay = parseInt(delayInput.value);
 
       // if (!message || !delay) {
       //   outputDiv.textContent = 'Please enter a message and a delay.';
