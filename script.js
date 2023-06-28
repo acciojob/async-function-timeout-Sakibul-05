@@ -1,9 +1,10 @@
 //your JS code here. If required.
  async function displayMessage() {
+	 
       const textInput = document.getElementById('text');
       const delayInput = document.getElementById('delay');
       const outputDiv = document.getElementById('output');
-
+		outputDiv.innerText = "";
       const message = textInput.value;
       const delay = parseInt(delayInput.value)*1000;
 
